@@ -2,8 +2,13 @@
 - 項書き換え系(term rewriting system)
 - Scalaの練習
 
+# 実行
+プログラムファイルへのパスを指定し、実行
+```
+sbt run input/array.trs
+```
 
-# 文法
+# プログラムの文法
 
 ## 書き換え規則
 - 以下のような形式で書き換え規則を記述する。
@@ -32,10 +37,12 @@
 ```trs
 0   + Y -> Y ;
 s X + Y -> s (X + Y) ;
+main -> 5 + 3 ;
 ```
 
 - 乗算の定義例
 ```trs
 mul 0     Y -> 0 ;
 mul (s X) Y -> mul X Y + Y ;
+main -> mul 2 (2 + 3) + 4 ;
 ```
