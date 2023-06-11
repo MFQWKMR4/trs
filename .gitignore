@@ -3,3 +3,4 @@ target/
 .metals/
 .vscode/
 input/*.trs
+logs/*.log
